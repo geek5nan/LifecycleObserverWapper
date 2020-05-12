@@ -5,11 +5,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common:2.2.0"
 }
 
-def localProperties = new Properties()
-localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
-def username = localProperties.getProperty("BINTRAY_USERNAME")
-def apikey = localProperties.getProperty("BINTRAY_APIKEY")
-
 
 publish {
     repoName = 'android'
@@ -20,7 +15,7 @@ publish {
     publishVersion = '0.1.0'
     desc = 'Happy Hacking'
     website = 'https://github.com/geek5nan/LifecycleObserverWapper'
-    bintrayUser = username
-    bintrayKey = apikey
+    bintrayUser = System.getenv("BINTRAY_USERNAME")
+    bintrayKey = System.getenv("BINTRAY_APIKEY")
     dryRun = false
 }
