@@ -1,0 +1,6 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation "androidx.lifecycle:lifecycle-common:2.2.0"
+}
+
